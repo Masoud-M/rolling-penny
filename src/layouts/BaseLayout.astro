@@ -1,10 +1,11 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import client from "@data/client.json";
-import Header from "@components/Header.astro";
+import Header from "../components/Header.astro";
 import Footer from "@components/Footer.astro";
 import "@styles/root.less";
-import "@styles/dark.less";
+import "@styles/dark.css";
+
 
 const {description, title} = Astro.props;
 
@@ -39,13 +40,19 @@ const {description, title} = Astro.props;
             <meta name="msapplication-TileColor" content="#da532c">
             <meta name="theme-color" content="#ffffff">
          
-            <!--For home page, use service keywords for the title, including location for SEO.
-            Other pages should just include the page name.
-            
-            EXAMPLE:
-            Home page - House Painting Contractors | Painters and Co. | TestCity, WA
-            About Page - About us | Painters and Co.
-            -->
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+              rel="stylesheet"
+            />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+              rel="stylesheet"
+            />
+
             <title>
                 {Astro.url.pathname === "/" ?  (`${ title }
                 |
@@ -82,7 +89,6 @@ const {description, title} = Astro.props;
         <body>
             <!--Screen reader skip main nav-->
             <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
-    
             <Header />
             <main id="main">
                 <slot/>
@@ -92,39 +98,3 @@ const {description, title} = Astro.props;
         </body>
 </html>
 
-<script is:inline>
-    // helper functions to toggle dark mode
-    function enableDarkMode() {
-      document.body.classList.add("dark-mode");
-      localStorage.setItem("theme", "dark");
-    }
-  
-    function disableDarkMode() {
-      document.body.classList.remove("dark-mode");
-      localStorage.setItem("theme", "light");
-    }
-  
-    function setTheme() {
-      // default to the light theme
-      let theme = "light";
-  
-      // check localStorage for a saved 'theme' variable. if it's there, the user has visited before, so apply the necessary theme choices
-      if (localStorage.getItem("theme")) {
-        theme = localStorage.getItem("theme");
-      }
-      // if it's not there, check to see if the user has applied dark mode preferences themselves in the browser
-      else if (
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-      ) {
-        theme = "dark";
-      }
-  
-      // if there is no preference set, the default of light will be used. apply accordingly
-      theme === "dark" ? enableDarkMode() : disableDarkMode();
-    }
-  
-    setTheme();
-  
-    document.addEventListener("astro:after-swap", setTheme); // For View Transitions purposes - astro:after-swap ensures that the theme is kept after navigating to a new page.
-  </script>

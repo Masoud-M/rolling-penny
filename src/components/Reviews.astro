@@ -1,0 +1,234 @@
+---
+import { Image } from "astro:assets";
+import ReviewImg1 from "../../src/assets/images/review-1.png";
+import ReviewImg2 from "../../src/assets/images/review-2.png";
+import ReviewImg3 from "../../src/assets/images/review-3.png";
+---
+
+<section id="reviews-62" class="cs-bg-accent">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">Our Reviews</span>
+      <h2 class="cs-title">Words From Our Customers</h2>
+    </div>
+    <ul class="cs-card-group">
+      <li class="cs-item">
+        <picture>
+          <Image
+            class="cs-img"
+            src={ReviewImg1}
+            aria-hidden="true"
+            alt="profile"
+            width="68"
+            height="68"
+          />
+        </picture>
+
+        <span class="cs-name">Sean.W</span>
+
+        <p class="cs-item-text">
+          Fresh off a 15 hour flight from San Francisco, a local friend brought
+          me here for a little Sunday brunch. I can’t imagine a better
+          introduction to what Sydney has to offer for food! A perfect
+          cappuccino and the best poached egg and sausage I can remember having!
+          The staff are friendly, super chill to chat with. Just great!
+        </p>
+      </li>
+      <li class="cs-item">
+        <picture>
+          <Image
+            class="cs-img"
+            src={ReviewImg2}
+            aria-hidden="true"
+            alt="profile"
+            width="68"
+            height="68"
+          />
+        </picture>
+        <span class="cs-name">Nicky.P</span>
+
+        <p class="cs-item-text">
+          Great cafe. Been lots of times and the food is always good. They’ve
+          improved their bacon and egg rolls even further recently, and I would
+          now rate it as one of the best ever (choose the ciabatta seeded bun!).
+          Great flavours and combination with relish etc. Good coffee and
+          atmosphere too.
+        </p>
+      </li>
+      <li class="cs-item">
+        <picture>
+          <Image
+            class="cs-img"
+            src={ReviewImg3}
+            aria-hidden="true"
+            alt="profile"
+            width="68"
+            height="68"
+          />
+        </picture>
+        <span class="cs-name">Alice</span>
+
+        <p class="cs-item-text">
+          The mushroom ricotta toast 🍄 was especially yummy - mushrooms were so
+          flavourful and the toast was nicely buttered and easy to cut into.
+          Coffee ☕️ is very affordable and tastes amazing. Staff are friendly
+          and chill. Would return for sure!
+        </p>
+      </li>
+    </ul>
+    <a
+      target="_blank"
+      aria-label="read more reviews"
+      href="https://www.google.com/maps/place/Rolling+Penny+Cafe/@-33.9053628,151.1779908,17z/data=!4m8!3m7!1s0x6b12b0497a489dcb:0x1499b14dc8095fa0!8m2!3d-33.9053673!4d151.1805657!9m1!1b1!16s%2Fg%2F11cmnmcdnl?entry=ttu"
+      class="cs-button-solid">Read More</a
+    >
+  </div>
+</section>
+
+<style>
+  /*-- -------------------------- -->
+<---          Reviews           -->
+<--- -------------------------- -*/
+
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0rem) {
+    #reviews-62 {
+      padding: var(--sectionPadding);
+    }
+    #reviews-62 .cs-container {
+      width: 100%;
+      max-width: 80rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+    }
+    #reviews-62 .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+    }
+
+    #reviews-62 .cs-card-group {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    #reviews-62 .cs-item {
+      list-style: none;
+      width: 100%;
+      max-width: 25.8125rem;
+      margin: 0;
+      padding: 0;
+    }
+    #reviews-62 .cs-img {
+      width: 4.25rem;
+      height: 4.25rem;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      display: block;
+    }
+    #reviews-62 .cs-name {
+      font-size: 1.25rem;
+      line-height: 1.2em;
+      text-align: center;
+      font-weight: 700;
+      margin: 0;
+      color: var(--headerColor);
+      display: block;
+    }
+    #reviews-62 .cs-desc {
+      font-size: 1rem;
+      line-height: 1.5em;
+      text-align: center;
+      margin: 0 0 1rem;
+      color: #7d799c;
+      display: block;
+    }
+    #reviews-62 .cs-item-text {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 2vw, 1rem);
+      text-align: center;
+      line-height: 1.5em;
+      margin: auto;
+      color: var(--bodyTextColor);
+    }
+    #reviews-62 .cs-button-solid {
+      font-size: 1rem;
+      /* 46px - 56px */
+      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+      color: #fff;
+      min-width: 9.375rem;
+      padding: 0 1.5rem;
+      background-color: var(--primary);
+      border-radius: 0.25rem;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      /* prevents padding from adding to the width */
+      box-sizing: border-box;
+    }
+    #reviews-62 .cs-button-solid:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      background: #000;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 0.25rem;
+      transition: width 0.3s;
+    }
+    #reviews-62 .cs-button-solid:hover:before {
+      width: 100%;
+    }
+  }
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #reviews-62 .cs-card-group {
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      row-gap: 2.5rem;
+    }
+    #reviews-62 .cs-item {
+      /* we do this so it's stackable. You can add new any number of reviews you want and they will stack and center in the middle. We dont use grid because if you have an odd number of reviews, they don't stay centered.  They align with their grid lines. If you want 4 reviews in a row, lower the width under 23% to get the desired sizes fit 4 in a row and then stack when you add more*/
+      width: clamp(31.5%, 30vw, 32.3%);
+    }
+  }
+  /* Dark Mode */
+  @media only screen and (min-width: 0rem) {
+    body.dark-mode #reviews-62 .cs-topper {
+      color: var(--primaryLight);
+    }
+    body.dark-mode #reviews-62 .cs-title,
+    body.dark-mode #reviews-62 .cs-text,
+    body.dark-mode #reviews-62 .cs-name,
+    body.dark-mode #reviews-62 .cs-desc,
+    body.dark-mode #reviews-62 .cs-item-text {
+      color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode #reviews-62 .cs-item-text,
+    body.dark-mode #reviews-62 .cs-text {
+      opacity: 0.8;
+    }
+  }
+</style>
