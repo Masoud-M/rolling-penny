@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import CSPicture from "../components/TemplateComponents/CSPicture.astro";
 import HeroImg from "../../src/assets/images/hero.webp";
 ---
 
@@ -25,10 +26,11 @@ import HeroImg from "../../src/assets/images/hero.webp";
           src={HeroImg}
           alt="hero image"
           aria-hidden="true"
-          widths={[240, 540, 720, HeroImg.width]}
-          sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${HeroImg.width}px`}
+          widths={[200, 380, 540, 720, HeroImg.width]}
+          sizes={`(max-width: 360px) 200px, (max-width: 540px) 380px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${HeroImg.width}px`}
           loading="eager"
           quality="low"
+          format="avif"
         />
       </picture>
       <div class="cs-stat-box">
